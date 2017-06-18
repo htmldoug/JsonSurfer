@@ -47,7 +47,7 @@ public class JacksonParser implements JsonParserAdapter {
     public void parse(Reader reader, final SurfingContext context) {
         try {
             JsonParser jp = this.factory.createParser(reader);
-            doPare(jp, context);
+            doParse(jp, context);
         } catch (Exception e) {
             context.getConfig().getErrorHandlingStrategy().handleParsingException(e);
         }
@@ -57,13 +57,13 @@ public class JacksonParser implements JsonParserAdapter {
     public void parse(String json, SurfingContext context) {
         try {
             JsonParser jp = this.factory.createParser(json);
-            doPare(jp, context);
+            doParse(jp, context);
         } catch (Exception e) {
             context.getConfig().getErrorHandlingStrategy().handleParsingException(e);
         }
     }
 
-    private void doPare(final JsonParser jp, SurfingContext context) throws IOException {
+    private void doParse(final JsonParser jp, SurfingContext context) throws IOException {
         final JsonProvider jsonProvider = context.getConfig().getJsonProvider();
 
         AbstractPrimitiveHolder stringHolder = new AbstractPrimitiveHolder(context.getConfig()) {
