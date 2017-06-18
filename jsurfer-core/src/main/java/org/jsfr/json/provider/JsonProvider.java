@@ -26,14 +26,33 @@ package org.jsfr.json.provider;
 
 import org.jsfr.json.resolver.DocumentResolver;
 
+/**
+ * Stateless facade that converts json tokens to some AST.
+ *
+ * @param <O> object type
+ * @param <A> array type
+ * @param <P> primitive type
+ */
 public interface JsonProvider<O, A, P> extends DocumentResolver<O, A> {
 
+    /**
+     * @return new empty object
+     */
     O createObject();
 
+    /**
+     * @return new empty array
+     */
     A createArray();
 
+    /**
+     * Appends the key-value pair to the object
+     */
     void put(O object, String key, P value);
 
+    /**
+     * Appends the value to the array
+     */
     void add(A array, P value);
 
     P primitive(boolean value);

@@ -32,6 +32,13 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * Mutable representation of the path in a json document.
+ *
+ * Used for two purposes:
+ * 1. Keeping track of the current position of the parser.
+ * 2. Defining the criteria of which nodes listeners are interested in.
+ */
 public class JsonPath implements Iterable<PathOperator> {
 
     private static final int JSON_PATH_INITIAL_CAPACITY = 20;

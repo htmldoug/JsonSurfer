@@ -29,6 +29,9 @@ import org.jsfr.json.path.ChildNode;
 import org.jsfr.json.path.JsonPath;
 import org.jsfr.json.path.PathOperator;
 
+/**
+ * Supplemental methods for {@link JsonPath} for tracking the current position of the parser.
+ */
 class JsonPosition extends JsonPath {
 
     static JsonPosition start() {
